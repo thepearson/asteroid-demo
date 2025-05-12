@@ -1,1 +1,1 @@
-== Speed tanks
+# Asteroid demo
