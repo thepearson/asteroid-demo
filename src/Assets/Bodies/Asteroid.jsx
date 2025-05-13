@@ -9,28 +9,12 @@ const materials = [
         roughness: 0.7,
         metalness: 0.5,
         flatShading: true,
-    }),
-    new THREE.MeshStandardMaterial({
-        color: 0x757575,
-        roughness: 0.7,
-        metalness: 0.5,
-        flatShading: true,
-    }),
-    new THREE.MeshStandardMaterial({
-        color: 0xAAAAAA,
-        roughness: 0.7,
-        metalness: 0.5,
-        flatShading: true,
-    }),
+    })
 ];
 
 const geometrys = [
     new THREE.DodecahedronGeometry(1, 0),
-    new THREE.DodecahedronGeometry(1, 1),
-    new THREE.IcosahedronGeometry(1, 1),
-    new THREE.OctahedronGeometry(1, 1),
-    new THREE.PolyhedronGeometry(1, 2),
-    new THREE.TetrahedronGeometry(1, 2)
+    new THREE.DodecahedronGeometry(1, 1)
 ]
 
 function Asteroid({rotation = [0, 0, 0], position = [0, 0, 0]}) {

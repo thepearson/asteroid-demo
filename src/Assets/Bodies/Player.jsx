@@ -57,12 +57,12 @@ export default function Player({fixedCamera = true, ...rest}) {
 
             const cameraPosition = new THREE.Vector3()
             cameraPosition.copy(bodyPosition)
-            cameraPosition.z += 50
-            cameraPosition.y += 50
+            cameraPosition.z += 35
+            cameraPosition.y += 35
 
             const cameraTarget = new THREE.Vector3()
             cameraTarget.copy(bodyPosition)
-            cameraTarget.y += 2
+            cameraTarget.y += 5
 
             smoothedCameraPosition.lerp(cameraPosition, 10 * delta)
             smoothedCameraTarget.lerp(cameraTarget, 10 * delta)
@@ -76,15 +76,16 @@ export default function Player({fixedCamera = true, ...rest}) {
         <RigidBody
             ref={player} 
             gravityScale={0}
-            colliders="cuboid"
+            colliders="hull"
             linearDamping={0.8}
             angularDamping={3}
             rotation={[0, 0, 0]}
+            canSleep={false}
             enabledTranslations={[true, false, true]}
             enabledRotations={[false, true, false]}
         >
             <group{...rest} dispose={null}>
-                <mesh geometry={nodes.Cube005.geometry} material={materials.Mat0} />
+                <mesh geometry={nodes.Cube005.geometry}   material={materials.Mat0} />
                 <mesh geometry={nodes.Cube005_1.geometry} material={materials.Mat1} />
                 <mesh geometry={nodes.Cube005_2.geometry} material={materials.Mat2} />
                 <mesh geometry={nodes.Cube005_3.geometry} material={materials.Window_Frame} />

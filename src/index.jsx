@@ -55,6 +55,6 @@ root.render(
         >
             <Experience />
         </Canvas>
-        {/* <Interface /> */}
+        <Interface />
     </KeyboardControls>
 )
