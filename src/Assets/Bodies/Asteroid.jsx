@@ -41,6 +41,7 @@ function Asteroid(props) {
             scale={(Math.random() * 0.5) + 0.2}
             linearDamping={0}
             angularDamping={0}
+            enabledTranslations={[true, false, true]}
             >
             <mesh
                 castShadow
