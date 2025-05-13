@@ -33,12 +33,14 @@ const geometrys = [
     new THREE.TetrahedronGeometry(1, 2)
 ]
 
-function Asteroid(props) {
+function Asteroid({rotation = [0, 0, 0], position = [0, 0, 0]}) {
     return (
         <RigidBody
             gravityScale={0}
             colliders="ball"
-            scale={(Math.random() * 0.5) + 0.2}
+            scale={(Math.random() * 0.5) + 0.5}
+            position={position}
+            rotation={rotation}
             linearDamping={0}
             angularDamping={0}
             enabledTranslations={[true, false, true]}
@@ -48,8 +50,6 @@ function Asteroid(props) {
                 receiveShadow
                 geometry={geometrys[Math.floor(Math.random() * geometrys.length)]}
                 material={materials[Math.floor(Math.random() * materials.length)]}
-                position={[Math.random() * 100 - 50, 0, Math.random() * 100 - 50]}
-                rotation={[Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI]}
             />
         </RigidBody>
     );

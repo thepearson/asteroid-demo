@@ -4,6 +4,8 @@ import Lights from './Assets/Environmental/Lights'
 import { Physics } from '@react-three/rapier'
 import Environment from './Assets/Environmental/Environment'
 import Asteroid from './Assets/Bodies/Asteroid'
+import Player from './Assets/Bodies/Player'
+import config from './config'
 
 export default function Experience()
 {
@@ -13,12 +15,16 @@ export default function Experience()
 
         <OrbitControls makeDefault />
 
-        <Physics debug>
+        <Physics debug={config.debugVar}>
             <Lights />
             <Environment />
-            {[...Array(1000)].map((o, i) => {
-                return <Asteroid key={i} />
+            {[...Array(config.asteroids)].map((o, i) => {
+                return <Asteroid 
+                    key={i} 
+                    position={[Math.random() * config.size - (config.size * 0.5), 0, Math.random() * config.size - (config.size * 0.5)]}
+                    rotation={[Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI]} />
             })}
+            <Player fixedCamera={config.fixedCamera} />
 
         </Physics>
 

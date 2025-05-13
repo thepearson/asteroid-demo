@@ -38,18 +38,6 @@ root.render(
             ]
         },
         {
-            name: "turretLeft",
-            keys: [
-                "KeyO"
-            ]
-        },
-        {
-            name: "turretRight",
-            keys: [
-                "KeyP"
-            ]
-        },
-        {
             name: "fire",
             keys: [
                 "Space"
@@ -61,7 +49,7 @@ root.render(
             camera={ {
                 fov: 45,
                 near: 0.1,
-                far: 2000,
+                far: 125,
                 position: [ 4, 2, 6 ]
             } }
         >

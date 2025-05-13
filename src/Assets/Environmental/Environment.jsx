@@ -11,13 +11,12 @@ function Environment(props) {
         './environment/ny.png', // negative y
         './environment/pz.png', // positive z
         './environment/nz.png', // negative z
-      ];
+    ];
 
     return (
         <>
         {/* <color attach="background" args={['#000000']} /> */}
-        <DreiEnv files={files} background />
-        
+            <DreiEnv files={files} background />
         </>
     );
 }
